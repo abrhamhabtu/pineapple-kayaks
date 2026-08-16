@@ -364,9 +364,20 @@ main { padding-top: var(--header); }
   inset: 0;
   overflow: hidden;
 }
+.hero-video-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
 .hero-video {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
   object-fit: cover;
   object-position: center center;
 }
@@ -1107,14 +1118,16 @@ a.hero-fact:hover { color: var(--mango-soft); }
   .trip-price { grid-column: 2; }
   .trip-photo { width: 64px; height: 64px; }
 
-  /* Same landscape clip, framed on the kayaker — not the POV paddle */
+  /* iOS Chrome ignores object-fit on <video>; size the file itself instead */
   .hero { min-height: 100svh; padding-bottom: 96px; }
   .hero-video {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 160%;
-    top: -18%;
+    top: 46%;
+    left: 72%;
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
     object-fit: cover;
     object-position: 72% 38%;
   }
