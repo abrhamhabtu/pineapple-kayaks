@@ -12,13 +12,16 @@ python3 -m http.server 4173 --directory prototype
 
 Then visit http://127.0.0.1:4173/
 
-## Ship it (recommended)
+## Preview on Netlify (from GitHub)
 
-1. Put `prototype/` on **Cloudflare Pages** or **Netlify** (drag the folder, or connect this repo).
-2. Add the custom domain `pineapplekayakskauai.com`.
-3. `_redirects` already 301s the old Wix URLs to the clean ones.
-4. In Google Search Console: submit `sitemap.xml`, request indexing on `/`, `/secret-falls`, `/hanalei`.
-5. Keep FareHarbor. Do not add a second booking system.
+The site is static. `netlify.toml` publishes `prototype/` with no build command. `_redirects` already 301s old Wix slugs.
+
+1. Open [Import this repo on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/abrhamhabtu/pineapple-kayaks).
+2. Authorize GitHub if asked. Pick the `abrhamhabtu/pineapple-kayaks` repo.
+3. Set **production branch** to `redesign-2026` for this preview (leave `main` if you want the older version live instead). Publish directory is already `prototype` via `netlify.toml`.
+4. Deploy. Netlify will give you a `*.netlify.app` URL and a new URL on every push to that branch.
+
+Later, when you are ready to replace Wix: add the custom domain `pineapplekayakskauai.com`, then in Google Search Console submit `sitemap.xml` and request indexing on `/`, `/secret-falls`, `/hanalei`. Keep FareHarbor. Do not add a second booking system.
 
 ## What’s in here
 

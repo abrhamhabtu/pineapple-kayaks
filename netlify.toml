@@ -1,0 +1,30 @@
+# Static site. Publish the prototype folder; no build step.
+# Connect this GitHub repo in Netlify. Branch deploys give you a
+# preview URL for redesign-2026 without touching production.
+
+[build]
+  publish = "prototype"
+
+[build.processing.html]
+  pretty_urls = true
+
+# HTML should revalidate; photos can cache.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
