@@ -28,6 +28,23 @@
     if (e.key === "Escape") closeNav();
   });
 
+  // Same official homepage clip on desktop and mobile
+  var heroVideo = document.querySelector("[data-hero-video]");
+  if (heroVideo) {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    function setHeroVideo() {
+      if (reduceMotion.matches) {
+        heroVideo.pause();
+        return;
+      }
+      heroVideo.muted = true;
+      var play = heroVideo.play();
+      if (play && play.catch) play.catch(function () {});
+    }
+    reduceMotion.addEventListener("change", setHeroVideo);
+    setHeroVideo();
+  }
+
   // Header gains a stronger background once you scroll past the hero
   var header = document.querySelector(".site-header");
   function onScroll() {
