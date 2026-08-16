@@ -13,68 +13,57 @@
 FareHarbor owns date, time, guests, payment, and confirmation. The site never collects card numbers.
 
 ## Aesthetic Direction
-- **Direction:** Warm editorial / organic. Guidebook, not template.
-- **Decoration:** Intentional. Photos do the work. No blobs, no purple, no icon-circle grids.
-- **Mood:** River light, sand, pineapple gold used rarely. Local and useful.
-- **Anti-slop:** No centered-everything, no 8-checkmark feature chips as the hero story, no Instagram caption dumps on the homepage.
+- **Direction:** Premium editorial dark. Deep jungle green, not navy. Photos do the work.
+- **Decoration:** Film grain, ambient gradient, slow hero pan, reveal-on-scroll. No blobs, no purple, no icon-circle grids.
+- **Mood:** Rainforest at dusk. River mist, mango-gold light, real Kauaʻi photos.
+- **Anti-slop:** No centered-everything, no 8-checkmark chips, no Instagram caption dumps, no stock desert canyon as the hero.
 
 ## Typography
-- **Display:** Fraunces (Google Fonts) — soft, island, not a tech grotesque.
-- **Body / UI:** Plus Jakarta Sans (Google Fonts) — from the original redesign brief, available in Wix.
-- **Loading:** Google Fonts in the prototype. In Wix Studio, add the same two fonts to the site styles.
+- **Display:** Fraunces (Google Fonts) — large, editorial, light-medium weight.
+- **Body / UI:** Plus Jakarta Sans (Google Fonts).
 - **Scale:**
-  - Display: `clamp(36px, 8vw, 72px)` / line-height 1.05
-  - H2: `clamp(26px, 4vw, 40px)` / 1.15
-  - H3: `clamp(20px, 2.5vw, 24px)`
-  - Body: 16–17px / 1.6
-  - Small / meta: 13px / 1.4, letter-spacing 0.04em on labels
+  - Display: `clamp(46px, 11vw, 120px)` / line-height 1.0
+  - H2: `clamp(30px, 5vw, 52px)`
+  - H3: `clamp(21px, 3vw, 26px)`
+  - Body: 16.5px / 1.65
+  - Kicker / meta: 12px, 0.22em, uppercase
 - **Rule:** Display font on headlines only. Never on paragraphs or buttons.
 
 ## Color
-- **Approach:** Restrained. One lagoon action color, one pineapple accent, warm paper neutrals.
-- **Foam (page):** `#f7f3eb`
-- **White (cards):** `#ffffff`
-- **Sand (bands):** `#e4dcc8`
-- **Ink (text):** `#16242b`
-- **Muted:** `#5c6b70`
-- **Navy (footer / dark bands):** `#123a4d`
-- **Lagoon (primary CTA):** `#0f6e6e`
-- **Lagoon dark (hover / header mark):** `#0b5555`
-- **Pineapple (rare accent, mobile Book, quotes):** `#f2c14e`
-- **Line:** `#d9d1c0`
-- **Error:** `#9b2c2c`
-- **Dark mode:** Not in v1. Outdoor phone users in sun need light, high-contrast UI.
+- **Night (page):** `#040b09`
+- **Jungle (band):** `#0b221c`
+- **Leaf (deep photo bg):** `#0e332a`
+- **Panel (cards):** `#102d25`
+- **Foam (headings):** `#f2f1e8`
+- **Mist (body on dark):** `#b9cfc6`
+- **Mist dim (meta):** `#8fae9f`
+- **Mango (primary CTA):** `#f0a51a`
+- **Mango soft (accent text):** `#f6c04d`
+- **Mango ink (on CTA):** `#1a1203`
+- **Line:** `rgba(185,207,198,0.16)`
+- **Error:** `#e0604d`
+- **Light mode:** Not in v2. This direction is a dark, cinematic river site.
 
 ## Spacing
 - **Base unit:** 8px
-- **Density:** Comfortable on desktop, tighter on mobile.
-- **Section padding:** 64px desktop, 40px mobile.
-- **Page gutter:** 24px mobile, 40px desktop.
-- **Max content:** 1120px. Hero text max 20ch–28ch.
+- **Section padding:** clamp(64px, 10vw, 120px)
+- **Gutter:** clamp(20px, 4vw, 48px)
+- **Max content:** 1200px. Article max 46rem.
+- **Radius:** 18px cards, 28px hero/gallery frames, 999px pills.
 
 ## Layout
-- **Approach:** Hybrid. Grid for cards and footers. Editorial left-align for heroes and story blocks.
-- **Breakpoints (Wix Studio):** 320 / 750 / 1000 / 1440
 - **Mobile first.** Most traffic is phones.
-- **Border radius:** 8px cards, 999px pills/buttons, 0 on images that should feel photographic.
+- Full-viewport hero with slow pan, editorial left-aligned type, scroll cue.
+- Alternating splits, stat rows, tilted photo frames, hover zoom.
+- Sticky header with logo badge (cream circle) + wordmark — readable on any photo.
+- Sticky mobile Call / Book pill bar.
 - **Touch targets:** 44px minimum.
 
 ## Motion
-- **Approach:** Minimal-functional. Wix Studio entrance animations only if they stay under 300ms.
-- **No** scroll-jacking, parallax engines, or custom page transitions.
-- **OK:** Header border on scroll, accordion open/close, `:hover` underline on desktop.
-
-## Components Wix Must Recreate
-| Prototype | Wix Studio |
-|---|---|
-| Sticky header + hamburger | Studio header + mobile menu |
-| Sticky mobile Call / Book bar | Fixed footer bar or floating buttons |
-| Adventure cards | Repeater + FareHarbor item link |
-| FAQ accordion | Accordion element |
-| Blog index / post | Wix Blog |
-| Instagram grid | Instagram feed app |
-| Map | Google Maps element |
-| Book CTA | FareHarbor embed / item calendar |
+- Hero: 30s ease-in-out pan on the photo.
+- Ambient gradient drift, film grain overlay, reveal-on-scroll (IntersectionObserver).
+- Full-screen mobile menu with staggered link reveals.
+- `prefers-reduced-motion`: everything static.
 
 ## Decisions Log
 | Date | Decision | Rationale |
@@ -85,3 +74,4 @@ FareHarbor owns date, time, guests, payment, and confirmation. The site never co
 | 2026-08-16 | Live-site ops over prototype fiction | Mon–Fri Secret Falls, zone delivery, $15 parking |
 | 2026-08-16 | Fraunces + Plus Jakarta | Distinctive display, brief-safe body, both on Google Fonts |
 | 2026-08-16 | Hero is Hanalei photo, not the live canyon video | That clip is a desert paddle, not Kauaʻi. Their Secret Falls YouTube is the Hawaii video. Canyon still stays on About. |
+| 2026-08-16 | Redesign: premium editorial dark (`redesign-2026` branch) | Deep jungle green + mango, Fraunces display, film grain, ambient gradient, full-viewport hero pan, reveal-on-scroll, full-screen mobile menu. Logo sits in a cream badge so it reads on any photo. Blog expanded to 4 guides. |

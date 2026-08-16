@@ -7,12 +7,14 @@
     if (!nav) return;
     nav.classList.add("is-open");
     document.body.style.overflow = "hidden";
+    if (openBtn) openBtn.setAttribute("aria-expanded", "true");
   }
 
   function closeNav() {
     if (!nav) return;
     nav.classList.remove("is-open");
     document.body.style.overflow = "";
+    if (openBtn) openBtn.setAttribute("aria-expanded", "false");
   }
 
   if (openBtn) openBtn.addEventListener("click", openNav);
@@ -22,7 +24,39 @@
       link.addEventListener("click", closeNav);
     });
   }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeNav();
+  });
 
+  // Header gains a stronger background once you scroll past the hero
+  var header = document.querySelector(".site-header");
+  function onScroll() {
+    if (!header) return;
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && reveals.length) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // FAQ accordion
   document.querySelectorAll("[data-faq]").forEach(function (item) {
     var button = item.querySelector("button");
     if (!button) return;

@@ -6,7 +6,7 @@
   <title>Kayak Rentals on Kauaʻi | Secret Falls &amp; Hanalei | Pineapple Kayaks</title>
   <meta name="description" content="Self-guided kayak rentals in Līhuʻe. Paddle the Wailua to Secret Falls (Mon–Fri) or the Hanalei River any day. From $45. Hotel delivery. Book online or call 808-631-8035.">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#123a4d">
+  <meta name="theme-color" content="#040b09">
   <meta name="geo.region" content="US-HI">
   <meta name="geo.placename" content="Lihue, Kauai">
   <link rel="canonical" href="https://www.pineapplekayakskauai.com/">
@@ -23,14 +23,15 @@
   <link rel="apple-touch-icon" href="img/logo-circle.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="img/logo.png" alt="Pineapple Kayaks Kauaʻi">
+      <a class="brand" href="index.html" aria-label="Pineapple Kayaks Kauaʻi home">
+        <span class="brand-badge"><img src="img/logo.png" alt=""></span>
+        <span class="brand-name">Pineapple Kayaks <span>Kauaʻi</span></span>
       </a>
       <nav class="nav-desktop" aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
@@ -40,7 +41,7 @@
         <a href="about.html">About</a>
         <a class="btn btn-primary" href="book.html">Book Now</a>
       </nav>
-      <button class="menu-btn" type="button" data-open-nav aria-label="Open menu">☰</button>
+      <button class="menu-btn" type="button" data-open-nav aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
@@ -53,7 +54,7 @@
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
-    <a class="btn btn-gold" href="book.html">Book Now</a>
+    <a class="btn btn-primary" href="book.html">Book Now</a>
   </nav>
 
   <main>
@@ -64,36 +65,63 @@
       <div class="wrap hero-copy">
         <p class="kicker">Wailua · Hanalei · Island-wide delivery</p>
         <h1>Explore Kauaʻi at your own pace.</h1>
-        <p>Self-guided kayaks, a map to Secret Falls, and gear that is ready when you show up. You paddle. We load the car.</p>
+        <p class="lead">Self-guided kayaks, a map to Secret Falls, and gear that is ready when you show up. You paddle. We load the car.</p>
         <div class="btn-row">
-          <a class="btn btn-gold" href="book.html">Book your adventure</a>
+          <a class="btn btn-primary" href="book.html">Book your adventure</a>
           <a class="btn btn-ghost" href="adventures.html">See adventures</a>
         </div>
-        <p class="hero-watch"><a href="#watch">Watch how Secret Falls works</a></p>
+        <div class="hero-foot">
+          <a href="#watch">Watch the actual river ↓</a>
+          <a href="tel:8086318035">808-631-8035</a>
+          <a href="book.html">From $45 / person</a>
+        </div>
       </div>
+      <div class="scroll-cue" aria-hidden="true">Scroll</div>
     </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Secret Falls <i>Mon–Fri</i></span><span>Hanalei River <i>7 days</i></span><span>3-day weekend <i>$150</i></span><span>Groups of 4+ <i>$40</i></span><span>Hotel delivery <i>available</i></span><span>We load the car <i>you paddle</i></span>
+        <span>Secret Falls <i>Mon–Fri</i></span><span>Hanalei River <i>7 days</i></span><span>3-day weekend <i>$150</i></span><span>Groups of 4+ <i>$40</i></span><span>Hotel delivery <i>available</i></span><span>We load the car <i>you paddle</i></span>
+      </div>
+    </div>
 
     <section class="section">
       <div class="wrap">
-        <div class="split intro-split">
-          <h2>Explore Kauaʻi at your own pace</h2>
-          <p class="lead" style="margin-bottom: 0;">Self-guided kayak rentals, Secret Falls adventures, and island-wide delivery options for travelers who want freedom, flexibility, and local experience.</p>
+        <div class="split">
+          <div class="reveal">
+            <p class="kicker">Why us</p>
+            <h2>Freedom over a packed tour.</h2>
+            <p class="lead">Self-guided kayak rentals, Secret Falls adventures, and island-wide delivery for travelers who want the river without the crowd.</p>
+            <ul class="facts" style="margin-top: 26px;">
+              <li>Stop, swim, take the photo — nobody is counting minutes</li>
+              <li>We load the kayaks and fit the soft roof racks</li>
+              <li>Secret Falls on weekdays, Hanalei all week</li>
+              <li>Hotel delivery if you do not want to drive to Līhuʻe</li>
+            </ul>
+          </div>
+          <div class="frame-tilt reveal">
+            <div class="photo" style="aspect-ratio: 4/5;"><img src="img/fh/secret-falls-07.jpg" alt="Kayaks and guests staging on the Wailua River"></div>
+          </div>
         </div>
-        <ul class="facts">
-          <li>Self-guided — stop, swim, and take the photo</li>
-          <li>We load the kayaks and fit the roof racks</li>
-          <li>Secret Falls weekdays · Hanalei all week</li>
-          <li>Hotel delivery if you do not want to drive to Līhuʻe</li>
-        </ul>
+        <div class="stat-row reveal">
+          <div class="stat"><b>2 mi</b><span>up the Wailua</span></div>
+          <div class="stat"><b>100 ft</b><span>Uluwehi Falls</span></div>
+          <div class="stat"><b>$45</b><span>per person, from</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-sand" id="watch">
+    <section class="section section-leaf" id="watch">
       <div class="wrap">
-        <p class="kicker">The trip, on video</p>
-        <h2>How to kayak to Secret Falls.</h2>
-        <p class="lead">Two minutes on the Wailua, the hike, and Secret Falls. Not a sales reel — the same route you paddle.</p>
-        <div class="video-frame">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">The trip, on video</p>
+            <h2>How to kayak to Secret Falls.</h2>
+          </div>
+          <p class="side muted">Two minutes on the Wailua, the hike, and the falls. Real footage from the route — not stock, not a sales reel.</p>
+        </div>
+        <div class="video-frame reveal">
           <iframe
             src="https://www.youtube-nocookie.com/embed/pljF-Cx5X94"
             title="How to kayak to Secret Falls on Kauaʻi"
@@ -106,92 +134,119 @@
 
     <section class="section">
       <div class="wrap">
-        <p class="kicker">Adventures</p>
-        <h2>Pick the river that fits the day.</h2>
-        <div class="grid grid-3" style="margin-top: 28px;">
-          <article class="card">
-            <div class="photo" style="min-height: 160px;"><img src="img/fh/secret-falls-01.jpg" alt="Secret Falls from above, jungle pool at the base"></div>
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Adventures</p>
+            <h2>Pick the river that fits the day.</h2>
+          </div>
+          <a class="btn btn-ghost" href="adventures.html">All adventures</a>
+        </div>
+        <div class="grid grid-3">
+          <article class="card reveal">
+            <div class="photo"><img src="img/fh/secret-falls-01.jpg" alt="Aerial view of Secret Falls and its jungle pool" loading="lazy"></div>
             <div class="card-body">
+              <div class="meta">Mon–Fri · 4–6 hours</div>
               <h3>Secret Falls</h3>
-              <p class="muted">Kayak the Wailua River, then hike to Uluwehi Falls. Mon–Fri only.</p>
+              <p class="muted">Kayak the Wailua, hike a mile, swim under a 100-foot fall.</p>
               <div class="price">From $45 / person</div>
               <div class="btn-row">
-                <a class="btn btn-outline" href="secret-falls.html">Details</a>
+                <a class="btn btn-ghost" href="secret-falls.html">Details</a>
                 <a class="btn btn-primary" href="book.html#secret-falls">Book</a>
               </div>
             </div>
           </article>
-          <article class="card">
-            <div class="photo" style="min-height: 160px;"><img src="img/fh/hanalei-01.jpg" alt="Yellow kayaks on the Hanalei River with mountain ridges behind"></div>
+          <article class="card reveal">
+            <div class="photo"><img src="img/fh/hanalei-01.jpg" alt="Kayaks paddling the calm Hanalei River" loading="lazy"></div>
             <div class="card-body">
+              <div class="meta">7 days · 2–4 hours</div>
               <h3>Hanalei River</h3>
-              <p class="muted">Calm North Shore paddle. Open 7 days. Best for families and first-timers.</p>
+              <p class="muted">Calm water, taro fields, Bali Hai. The easy paddle, open weekends.</p>
               <div class="price">From $45 / person</div>
               <div class="btn-row">
-                <a class="btn btn-outline" href="hanalei.html">Details</a>
+                <a class="btn btn-ghost" href="hanalei.html">Details</a>
                 <a class="btn btn-primary" href="book.html#hanalei">Book</a>
               </div>
             </div>
           </article>
-          <article class="card">
-            <div class="photo" style="min-height: 160px;"><img src="img/fh/secret-falls-07.jpg" alt="Kayaks lined on the Wailua bank with a group walking the shallows"></div>
+          <article class="card reveal">
+            <div class="photo"><img src="img/fh/secret-falls-07.jpg" alt="A group launching kayaks on the Wailua" loading="lazy"></div>
             <div class="card-body">
-              <h3>Groups of 4+</h3>
-              <p class="muted">Same rivers, $40 a person. Families, weddings, and friend groups.</p>
+              <div class="meta">4 or more guests</div>
+              <h3>Groups</h3>
+              <p class="muted">$40 a person on either river. We help with timing and delivery.</p>
               <div class="price">$40 / person</div>
               <div class="btn-row">
-                <a class="btn btn-outline" href="groups.html">Details</a>
+                <a class="btn btn-ghost" href="groups.html">Details</a>
                 <a class="btn btn-primary" href="book.html#groups">Book</a>
               </div>
             </div>
           </article>
         </div>
-        <p style="margin-top: 20px;"><a href="weekend.html">Keeping the kayak all weekend? See the 3-day deal →</a></p>
+        <p class="reveal" style="margin-top: 26px;"><a href="weekend.html">Staying the weekend? The 3-day deal is $150 →</a></p>
       </div>
     </section>
 
-    <section class="section section-navy">
-      <div class="wrap" style="max-width: 40rem;">
-        <p class="kicker">From the river</p>
-        <h2 style="font-size: clamp(26px, 4vw, 36px);">“The staff was friendly and the kayaks were top-notch.”</h2>
-        <p style="font-weight: 700; color: var(--pineapple);">Liam O’Connor</p>
-        <p><a href="https://www.yelp.com/biz/pineapple-kayaks-kaua-i-lihue">Read more on Yelp →</a></p>
+    <section class="quote-band">
+      <div class="wrap quote reveal">
+        <p>“The experience was phenomenal. The staff was friendly and the kayaks were top-notch.”</p>
+        <cite>Liam O. — Yelp</cite>
       </div>
     </section>
 
     <section class="section">
-      <div class="wrap split">
-        <div class="photo" style="min-height: 240px; border-radius: 8px;"><img src="img/fh/secret-falls-07.jpg" alt="Guests and kayaks at the Wailua River launch"></div>
-        <div>
-          <p class="kicker">Local</p>
-          <h2>Carrying Kamokila forward.</h2>
-          <p class="muted">One of the owners previously ran Kamokila Village on the Wailua. Same river knowledge, new shop in Līhuʻe — five minutes from the launch, next to Kauaʻi Beach Resort.</p>
-          <a href="about.html">Read the story →</a>
+      <div class="wrap split rev">
+        <div class="reveal">
+          <p class="kicker">The shop</p>
+          <h2>Local boats. River people.</h2>
+          <p class="lead">One of the owners used to run Kamokila Village on the Wailua. We know the river, we load the gear, and we would rather send you out self-guided than sell you a packed tour.</p>
+          <div class="btn-row" style="margin-top: 24px;">
+            <a class="btn btn-ghost" href="about.html">About us</a>
+            <a class="btn btn-ghost" href="faq.html">FAQ</a>
+          </div>
+        </div>
+        <div class="frame-tilt reveal">
+          <div class="photo" style="aspect-ratio: 4/5;"><img src="img/fh/hanalei-09.jpg" alt="Hanalei Pier and bay" loading="lazy"></div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section section-leaf">
       <div class="wrap">
-        <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom: 20px;">
-          <h2>Before you paddle</h2>
-          <a href="blog.html">All guides →</a>
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Guides</p>
+            <h2>Notes from the shop.</h2>
+          </div>
+          <a class="btn btn-ghost" href="blog.html">All guides</a>
         </div>
         <div class="grid grid-2">
-          <a class="card" href="blog-secret-falls.html">
-            <div class="photo" style="min-height: 120px;"><img src="img/fh/secret-falls-03.jpg" alt="People at the base of Secret Falls"></div>
+          <a class="card card-lg reveal" href="blog-secret-falls.html">
+            <div class="photo"><img src="img/fh/secret-falls-03.jpg" alt="Secret Falls plunge pool" loading="lazy"></div>
             <div class="card-body">
-              <div class="meta">Trip guide</div>
+              <div class="meta">Trip guide · 6 min</div>
               <h3>Secret Falls, without the guesswork</h3>
+              <p class="muted">Launch time, the hike, shoes, and why Monday morning beats a packed Wednesday.</p>
             </div>
           </a>
-          <a class="card" href="blog.html">
-            <div class="photo" style="min-height: 120px;"><img src="img/fh/hanalei-09.jpg" alt="Hanalei Pier and the bay"></div>
+          <a class="card card-lg reveal" href="blog.html#hanalei-vs-falls">
+            <div class="photo"><img src="img/fh/hanalei-09.jpg" alt="Hanalei Pier at the river mouth" loading="lazy"></div>
             <div class="card-body">
-              <div class="meta">Trip guide</div>
+              <div class="meta">Trip guide · 5 min</div>
               <h3>Hanalei or Secret Falls?</h3>
+              <p class="muted">One is a waterfall day. One is a calm river. How to pick for your group.</p>
             </div>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap center reveal">
+        <p class="kicker" style="justify-content: center;">Ready when you are</p>
+        <h2 style="max-width: 18ch; margin-inline: auto;">Show up. Paddle. We handle the rest.</h2>
+        <div class="btn-row" style="justify-content: center; margin-top: 26px;">
+          <a class="btn btn-primary" href="book.html">Book now</a>
+          <a class="btn btn-ghost" href="tel:8086318035">Call 808-631-8035</a>
         </div>
       </div>
     </section>
@@ -200,29 +255,25 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <div class="footer-title">Get in touch</div>
-        <p><a href="tel:8086318035">808-631-8035</a></p>
-        <address>
-          3-4684 Kūhiō Highway<br>The Pineapple Store, Līhuʻe, HI 96766
-        </address>
-        <p>
-          <a href="https://www.instagram.com/pineapplekayakskauai/">Instagram</a> ·
-          <a href="https://www.facebook.com/people/Pineapple-Kayaks-Kauai/61575252682457/">Facebook</a> ·
-          <a href="https://www.yelp.com/biz/pineapple-kayaks-kaua-i-lihue">Yelp</a>
-        </p>
+        <div class="footer-title">The shop</div>
+        <p>3-4684 Kūhiō Highway, Līhuʻe, HI 96766<br>The Pineapple Store, next to Kauaʻi Beach Resort.</p>
+        <p><a href="tel:8086318035">808-631-8035</a> · <a href="tel:8086318672">808-631-8672</a></p>
+        <p><a href="https://www.instagram.com/pineapplekayakskauai/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/people/Pineapple-Kayaks-Kauai/61575252682457/" target="_blank" rel="noopener">Facebook</a></p>
       </div>
       <div class="map-slot">
         <iframe title="Map to Pineapple Kayaks" src="https://www.google.com/maps?q=3-4684+Kuhio+Highway,+Lihue,+HI+96766&output=embed" loading="lazy"></iframe>
       </div>
     </div>
-    <div class="wrap legal">© 2026 Pineapple Kayaks Kauaʻi</div>
+    <div class="wrap legal">
+      <span>© 2026 Pineapple Kayaks Kauaʻi</span>
+      <span><a href="blog.html">Guides</a> · <a href="faq.html">FAQ</a> · <a href="book.html">Book</a></span>
+    </div>
   </footer>
 
   <div class="sticky-bar">
-    <a class="btn btn-outline" href="tel:8086318035">Call</a>
-    <a class="btn btn-gold" href="book.html">Book Now</a>
+    <a class="btn btn-ghost" href="tel:8086318035">Call</a>
+    <a class="btn btn-primary" href="book.html">Book Now</a>
   </div>
-
   <script src="js/main.js"></script>
   <script src="js/schema.js"></script>
 </body>

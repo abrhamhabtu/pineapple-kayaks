@@ -60,7 +60,7 @@
     var items = [];
     document.querySelectorAll("[data-faq]").forEach(function (el) {
       var q = el.querySelector("button");
-      var a = el.querySelector(".answer");
+      var a = el.querySelector(".faq-body");
       if (!q || !a) return;
       items.push({
         "@type": "Question",

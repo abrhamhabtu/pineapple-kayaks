@@ -17,17 +17,28 @@
   <link rel="icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .book-page { min-height: 100svh; padding: 32px 0 64px; }
+    .book-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 26px;
+    }
+    .book-top a:not(.brand) { color: var(--mist); font-weight: 600; }
+  </style>
 </head>
 <body class="is-booking">
   <main class="book-page">
     <div class="wrap">
       <div class="book-top">
-        <a class="brand" href="index.html">
-          <img class="brand-logo" src="img/logo.png" alt="Pineapple Kayaks Kauaʻi">
+        <a class="brand" href="index.html" aria-label="Pineapple Kayaks Kauaʻi home">
+          <span class="brand-badge"><img src="img/logo.png" alt=""></span>
+          <span class="brand-name">Pineapple Kayaks <span>Kauaʻi</span></span>
         </a>
-        <a href="index.html">Cancel</a>
+        <a href="index.html">← Back to site</a>
       </div>
       <div data-book></div>
     </div>

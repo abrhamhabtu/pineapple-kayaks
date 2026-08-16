@@ -17,14 +17,15 @@
   <link rel="icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="img/logo.png" alt="Pineapple Kayaks Kauaʻi">
+      <a class="brand" href="index.html" aria-label="Pineapple Kayaks Kauaʻi home">
+        <span class="brand-badge"><img src="img/logo.png" alt=""></span>
+        <span class="brand-name">Pineapple Kayaks <span>Kauaʻi</span></span>
       </a>
       <nav class="nav-desktop" aria-label="Primary">
         <a href="index.html">Home</a>
@@ -34,7 +35,7 @@
         <a href="about.html">About</a>
         <a class="btn btn-primary" href="book.html#groups">Book Now</a>
       </nav>
-      <button class="menu-btn" type="button" data-open-nav aria-label="Open menu">☰</button>
+      <button class="menu-btn" type="button" data-open-nav aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
@@ -45,7 +46,7 @@
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
-    <a class="btn btn-gold" href="book.html#groups">Book Now</a>
+    <a class="btn btn-primary" href="book.html#groups">Book Now</a>
   </nav>
 
   <main>
@@ -60,21 +61,27 @@
 
     <section class="section" style="padding-top: 0;">
       <div class="wrap">
-        <div class="photo" style="min-height: 220px; border-radius: 8px; margin-bottom: 24px;"><img src="img/fh/secret-falls-07.jpg" alt="A group launching from the Wailua River"></div>
-        <p>Book the river you want. The group rate applies automatically at 4 paying guests. Doubles are better when kids or first-timers are in the mix — the group stays together.</p>
-        <div class="note" style="margin: 20px 0;">
-          <strong>Live site note:</strong> One current page still says $50 regular / $40 group. FareHarbor is $45 rack / $40 group. Keep the pages matched to FareHarbor.
-        </div>
-        <ul class="facts">
-          <li>Secret Falls (Mon–Fri) or Hanalei (7 days)</li>
-          <li>Delivery available at the posted zone rates</li>
-          <li>Call 808-631-8035 for 10+ or a custom start time</li>
-        </ul>
-        <div class="bookings-slot" style="margin-top: 32px;">
-          <h3>Book the group</h3>
-          <p>FareHarbor group rate is $40 a person for 4 or more on Secret Falls. Call for 10+.</p>
-          <div class="fh-embed">
-            <iframe title="Book group rate" src="https://fareharbor.com/embeds/book/redeyesnackshack/items/748682/?full-items=yes&flow=1122156" loading="lazy"></iframe>
+        <div class="photo reveal" style="aspect-ratio: 16/8; border-radius: var(--radius-lg); margin-bottom: 28px;"><img src="img/fh/secret-falls-07.jpg" alt="A group launching from the Wailua River"></div>
+        <div class="split" style="align-items: start;">
+          <div class="article reveal">
+            <p>Book the river you want. The group rate applies automatically at 4 paying guests. Doubles are better when kids or first-timers are in the mix — the group stays together.</p>
+            <ul class="facts">
+              <li>Secret Falls (Mon–Fri) or Hanalei (7 days)</li>
+              <li>Delivery available at the posted zone rates</li>
+              <li>Call 808-631-8035 for 10+ or a custom start time</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <div class="frame-tilt">
+              <div class="photo" style="aspect-ratio: 3/4;"><img src="img/fh/secret-falls-11.jpg" alt="Friends paddling together on the river" loading="lazy"></div>
+            </div>
+            <div class="book-panel" style="margin-top: 22px;" id="book">
+              <h3 style="margin-bottom: 6px;">Book the group</h3>
+              <p class="muted" style="font-size: 14.5px;">FareHarbor group rate: $40 a person for 4+ on Secret Falls. Call for 10+.</p>
+              <div class="fh-embed">
+                <iframe title="Book group rate" src="https://fareharbor.com/embeds/book/redeyesnackshack/items/748682/?full-items=yes&flow=1122156" loading="lazy"></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -82,11 +89,19 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap legal">© 2026 Pineapple Kayaks Kauaʻi</div>
+    <div class="wrap">
+      <div class="footer-title">Planning a big group?</div>
+      <p><a href="tel:8086318035">808-631-8035</a> · <a href="faq.html">FAQ</a></p>
+    </div>
+    <div class="wrap legal">
+      <span>© 2026 Pineapple Kayaks Kauaʻi</span>
+      <span><a href="blog.html">Guides</a> · <a href="adventures.html">Adventures</a></span>
+    </div>
   </footer>
+
   <div class="sticky-bar">
-    <a class="btn btn-outline" href="tel:8086318035">Call</a>
-    <a class="btn btn-gold" href="book.html#groups">Book Group</a>
+    <a class="btn btn-ghost" href="tel:8086318035">Call</a>
+    <a class="btn btn-primary" href="book.html#groups">Book Group</a>
   </div>
   <script src="js/main.js"></script>
   <script src="js/schema.js"></script>
