@@ -102,6 +102,23 @@
     }
   };
 
+  if (page && page.indexOf("blog-") === 0) {
+    var titleEl = document.querySelector('meta[property="og:title"]');
+    var descEl = document.querySelector('meta[name="description"]');
+    var imgEl = document.querySelector('meta[property="og:image"]');
+    var canonEl = document.querySelector('link[rel="canonical"]');
+    graph.push({
+      "@type": "BlogPosting",
+      headline: titleEl ? titleEl.getAttribute("content") : document.title,
+      description: descEl ? descEl.getAttribute("content") : "",
+      image: imgEl ? imgEl.getAttribute("content") : "",
+      url: canonEl ? canonEl.getAttribute("href") : SITE + "/" + page,
+      author: { "@id": SITE + "/#business" },
+      publisher: { "@id": SITE + "/#business" },
+      mainEntityOfPage: canonEl ? canonEl.getAttribute("href") : SITE + "/" + page
+    });
+  }
+
   if (trips[page]) {
     var t = trips[page];
     graph.push({
