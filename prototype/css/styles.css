@@ -255,14 +255,28 @@ p:last-child { margin-bottom: 0; }
   background: var(--paper);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 24px var(--gutter);
-  gap: 6px;
+  justify-content: flex-start;
+  padding: 72px var(--gutter) 32px;
+  gap: 4px;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s var(--ease-out), visibility 0.4s;
 }
 .mobile-nav.is-open { opacity: 1; visibility: visible; }
+.mobile-nav::before {
+  content: "";
+  display: block;
+  width: min(168px, 44vw);
+  aspect-ratio: 709 / 932;
+  margin: 0 0 18px;
+  background: url("../img/logo.png") center / contain no-repeat;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.mobile-nav.is-open::before { opacity: 1; transform: none; }
 .mobile-nav-top {
   position: absolute;
   top: 16px;
