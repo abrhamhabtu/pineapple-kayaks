@@ -6,6 +6,28 @@
 /copy-of-secret-falls-adventure-1 /groups 301
 /dive-sites /faq 301
 
+# .html URLs → clean slugs (avoid duplicate content)
+/index.html / 301
+/adventures.html /adventures 301
+/secret-falls.html /secret-falls 301
+/hanalei.html /hanalei 301
+/weekend.html /weekend 301
+/groups.html /groups 301
+/about.html /about 301
+/faq.html /faq 301
+/blog.html /blog 301
+/blog-best-price.html /blog-best-price 301
+/blog-rental-vs-tour.html /blog-rental-vs-tour 301
+/blog-weekend-plan.html /blog-weekend-plan 301
+/blog-when-to-go.html /blog-when-to-go 301
+/blog-kids.html /blog-kids 301
+/blog-delivery.html /blog-delivery 301
+/blog-secret-falls.html /blog-secret-falls 301
+/blog-hanalei-vs-falls.html /blog-hanalei-vs-falls 301
+/blog-pack.html /blog-pack 301
+/blog-groups.html /blog-groups 301
+/book.html /book 301
+
 # Pretty files
 /adventures /adventures.html 200
 /secret-falls /secret-falls.html 200
