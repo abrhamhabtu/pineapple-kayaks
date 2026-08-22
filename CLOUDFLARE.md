@@ -23,12 +23,13 @@ Use these settings when creating the Pages project:
 - **Build command:** _(leave empty)_
 - **Build output directory / Root directory:** `prototype`
 
-### 3. Preview First
+### 3. Preview First — DO NOT Request Indexing
 
 After the first deployment:
 
 - Cloudflare will give you a `*.pages.dev` preview URL
 - Test the site thoroughly on this URL
+- **DO NOT request indexing of the `*.pages.dev` URL** — canonicals already point at `https://www.pineapplekayakskauai.com/`
 - Verify:
   - All pages load with clean URLs (e.g., `/adventures`, not `/adventures.html`)
   - `.html` URLs redirect to clean slugs via 301
@@ -37,23 +38,46 @@ After the first deployment:
   - Security headers are applied (check DevTools Network tab)
   - Images and videos load correctly
 
-### 4. Custom Domain (Later)
+### 4. Custom Domain Cutover (Later)
 
-**Do NOT point the custom domain until the owner approves.**
+**DO NOT point the custom domain until the owner approves.**
 
-When ready:
+#### Before DNS Flip
+
+1. **Confirm Google Search Console verification method** with the owner:
+   - Check if current verification is via Wix HTML file or DNS TXT record
+   - If Wix HTML file: add DNS TXT verification in GSC **before** DNS cutover
+   - Do NOT invent a `google-site-verification` HTML file
+   - Ensure verification will persist after leaving Wix
+
+2. **Prepare DNS records** (do not apply yet):
+   - Add `www.pineapplekayakskauai.com` as custom domain in Cloudflare Pages
+   - Add `pineapplekayakskauai.com` (apex) as custom domain in Cloudflare Pages
+   - Configure apex → www redirect in Cloudflare Pages settings
+
+#### During DNS Cutover
+
+When ready to go live:
 
 1. In Cloudflare Pages project → **Custom domains**
-2. Add `pineapplekayakskauai.com` and `www.pineapplekayakskauai.com`
-3. Cloudflare will automatically provision SSL certificates
-4. Update DNS records as instructed by Cloudflare
-5. Wait for DNS propagation (usually < 5 minutes)
+2. Add `www.pineapplekayakskauai.com` (primary)
+3. Add `pineapplekayakskauai.com` (apex) and redirect to www
+4. Cloudflare will automatically provision SSL certificates
+5. Update DNS records as instructed by Cloudflare
+6. Wait for DNS propagation (usually < 5 minutes)
+7. Verify `https://www.pineapplekayakskauai.com/` loads correctly
+8. Verify apex `https://pineapplekayakskauai.com/` redirects to www
 
-After the custom domain is live:
+**Important:** Canonicals and sitemap already use `www.pineapplekayakskauai.com` — this is a same-domain deployment, not a domain move.
 
-- Submit the new sitemap to Google Search Console: `https://www.pineapplekayakskauai.com/sitemap.xml`
-- Request indexing for key pages: `/`, `/secret-falls`, `/hanalei`
-- Monitor search performance for a few weeks
+#### After DNS Cutover
+
+1. Wait 24–48 hours for DNS to fully propagate
+2. Submit sitemap in Google Search Console: `https://www.pineapplekayakskauai.com/sitemap.xml`
+3. **DO NOT use "Change of Address" tool in GSC** — this is the same domain, not a domain move
+4. Request indexing for key pages: `/`, `/secret-falls`, `/hanalei`
+5. Monitor Google Search Console for crawl errors
+6. Monitor search performance for 2–4 weeks
 
 ## What's Configured
 
@@ -73,9 +97,11 @@ The site includes production-ready security headers via `_headers`:
 
 The `_redirects` file handles:
 
-1. **Old Wix slugs → Clean URLs (301)** — SEO redirects from broken Wix URLs
+1. **Old Wix slugs → Clean URLs (301)** — SEO redirects from broken Wix URLs (e.g., `/copy-of-hanalei-adventure` → `/secret-falls`)
 2. **`.html` URLs → Clean slugs (301)** — prevents duplicate content (e.g., `/adventures.html` → `/adventures`)
 3. **Clean URLs → HTML files (200)** — internal rewrites for pretty URLs
+
+**Important:** Keep `prototype/_redirects` for **at least one year after cutover**. Old Wix URLs may still be indexed in Google, shared in travel forums, or bookmarked by returning customers. Removing redirects prematurely will create 404s and hurt SEO.
 
 ## FareHarbor Integration
 
@@ -86,6 +112,34 @@ The `_redirects` file handles:
 - Item IDs: See `README.md` for the full list
 
 Booking happens on FareHarbor. The site never collects card numbers.
+
+## SEO & Indexing Strategy
+
+### Before Cutover
+
+- **DO NOT request indexing of `*.pages.dev` URLs** — these are for testing only
+- Canonicals in all HTML files already point at `https://www.pineapplekayakskauai.com/`
+- Google will ignore the preview URLs due to canonical tags
+
+### During Cutover
+
+- This is a **same-domain deployment**, not a domain move or migration
+- The domain stays `pineapplekayakskauai.com` (www subdomain)
+- Only the hosting platform changes (Wix → Cloudflare Pages)
+
+### After Cutover
+
+- **DO NOT use Google Search Console "Change of Address" tool** — that's for domain moves (e.g., `old-domain.com` → `new-domain.com`)
+- **DO NOT submit sitemap.xml until the custom domain points at Cloudflare Pages** — wait 24–48 hours after DNS cutover
+- Submit sitemap: `https://www.pineapplekayakskauai.com/sitemap.xml`
+- Request indexing for key pages: `/`, `/secret-falls`, `/hanalei`
+- Monitor Google Search Console for crawl errors and performance
+
+### URL Preservation
+
+- Keep `prototype/_redirects` for **at least one year** after cutover
+- Old Wix slugs (e.g., `/copy-of-hanalei-adventure`) may still be indexed or bookmarked
+- Removing redirects prematurely creates 404s and hurts SEO
 
 ## Netlify Configuration
 
