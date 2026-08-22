@@ -93,15 +93,39 @@ The site includes production-ready security headers via `_headers`:
 
 **Note:** No HSTS header until the custom domain is confirmed. No strict CSP to avoid breaking Google Fonts, YouTube, Google Maps, or FareHarbor embeds.
 
+**HSTS Setup at Cutover:** After DNS points to Cloudflare Pages, enable HSTS in the Cloudflare dashboard (SSL/TLS → Edge Certificates → HTTP Strict Transport Security). Use `max-age=31556952` to match what Wix currently sends. Do NOT add HSTS to `_headers` before confirming the custom domain works on HTTPS.
+
 ### URL Structure (`prototype/_redirects`)
 
 The `_redirects` file handles:
 
-1. **Old Wix slugs → Clean URLs (301)** — SEO redirects from broken Wix URLs (e.g., `/copy-of-hanalei-adventure` → `/secret-falls`)
+1. **Old Wix slugs → Clean URLs (301)** — SEO redirects from broken Wix URLs:
+   - `/copy-of-hanalei-adventure` → `/secret-falls`
+   - `/services` → `/adventures`
+   - `/service-page/kayak-rentals` → `/book`
+   - `/service-page/secret-falls-self-guided-tours` → `/book`
+   - Plus 3 other Wix redirect URLs
 2. **`.html` URLs → Clean slugs (301)** — prevents duplicate content (e.g., `/adventures.html` → `/adventures`)
 3. **Clean URLs → HTML files (200)** — internal rewrites for pretty URLs
 
 **Important:** Keep `prototype/_redirects` for **at least one year after cutover**. Old Wix URLs may still be indexed in Google, shared in travel forums, or bookmarked by returning customers. Removing redirects prematurely will create 404s and hurt SEO.
+
+### URLs That Need Owner Decision
+
+The following Wix URLs currently return 200 on the live site but are NOT mapped in `prototype/_redirects`. After DNS cutover, they would 404. **Do NOT invent destinations** — the owner must decide where these should redirect:
+
+**Product Pages (9 URLs):**
+- `/product-page/...` (merchandise/shop items)
+
+**Category Pages (4 URLs):**
+- `/category/...` (shop categories)
+
+Options:
+1. Let them 404 (if the shop/merch is retired)
+2. 301 to `/` (if no clear equivalent)
+3. 301 to a new shop page (if the owner adds merch to the new site)
+
+These URLs are intentionally excluded from this PR to avoid guessing business intent.
 
 ## FareHarbor Integration
 
