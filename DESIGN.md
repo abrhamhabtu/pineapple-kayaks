@@ -13,9 +13,9 @@
 FareHarbor owns date, time, guests, payment, and confirmation. The site never collects card numbers.
 
 ## Aesthetic Direction
-- **Direction:** Premium editorial dark. Deep jungle green, not navy. Photos do the work.
-- **Decoration:** Film grain, ambient gradient, slow hero pan, reveal-on-scroll. No blobs, no purple, no icon-circle grids.
-- **Mood:** Rainforest at dusk. River mist, mango-gold light, real Kauaʻi photos.
+- **Direction:** Premium island editorial. Warm ivory paper, deep navy, palm green, pineapple gold. Real Kauaʻi photos do the work.
+- **Decoration:** Film grain, subtle gradient overlays, slow hero pan, reveal-on-scroll. No blobs, no purple, no icon-circle grids.
+- **Mood:** Warm tropical morning. Mountain mist, golden light, taro fields, real kayak photos from the rivers.
 - **Anti-slop:** No centered-everything, no 8-checkmark chips, no Instagram caption dumps, no stock desert canyon as the hero.
 
 ## Typography
@@ -30,19 +30,25 @@ FareHarbor owns date, time, guests, payment, and confirmation. The site never co
 - **Rule:** Display font on headlines only. Never on paragraphs or buttons.
 
 ## Color
-- **Night (page):** `#040b09`
-- **Jungle (band):** `#0b221c`
-- **Leaf (deep photo bg):** `#0e332a`
-- **Panel (cards):** `#102d25`
-- **Foam (headings):** `#f2f1e8`
-- **Mist (body on dark):** `#b9cfc6`
-- **Mist dim (meta):** `#8fae9f`
+- **Paper (page bg):** `#fdfbf3`
+- **Cream (section bands):** `#f8f0d7`
+- **Sand (alt bands):** `#efe5c8`
+- **White:** `#ffffff`
+- **Navy (headings):** `#1d2b50`
+- **Navy deep (footer/dark sections):** `#131f3d`
+- **Palm (accents):** `#0d4a26`
+- **Palm deep (hover):** `#093a1e`
+- **Ink (strong text):** `#182444`
+- **Body ink (paragraph text):** `#3e4763`
+- **Muted (meta/secondary):** `#6a7188`
+- **On dark (text on navy):** `#f7f4e8`
+- **Teal (utility links):** `#0e7d6d`
 - **Mango (primary CTA):** `#f0a51a`
 - **Mango soft (accent text):** `#f6c04d`
-- **Mango ink (on CTA):** `#1a1203`
-- **Line:** `rgba(185,207,198,0.16)`
-- **Error:** `#e0604d`
-- **Light mode:** Not in v2. This direction is a dark, cinematic river site.
+- **Mango deep (CTA hover):** `#9c6d07`
+- **Mango ink (text on CTA):** `#221703`
+- **Line:** `rgba(24, 36, 68, 0.14)`
+- **Error:** `#cf4a37`
 
 ## Spacing
 - **Base unit:** 8px
@@ -53,15 +59,15 @@ FareHarbor owns date, time, guests, payment, and confirmation. The site never co
 
 ## Layout
 - **Mobile first.** Most traffic is phones.
-- Full-viewport hero with slow pan, editorial left-aligned type, scroll cue.
+- Full-viewport hero with slow video pan, editorial left-aligned type, scroll cue.
 - Alternating splits, stat rows, tilted photo frames, hover zoom.
-- Sticky header with logo badge (cream circle) + wordmark — readable on any photo.
-- Sticky mobile Call / Book pill bar.
+- Sticky header with logo badge (pineapple in cream circle) + wordmark — readable on any photo.
+- Sticky mobile Call / Book pill bar at bottom.
 - **Touch targets:** 44px minimum.
 
 ## Motion
-- Hero: 30s ease-in-out pan on the photo.
-- Ambient gradient drift, film grain overlay, reveal-on-scroll (IntersectionObserver).
+- Hero: 30s ease-in-out pan on the kayak video.
+- Subtle gradient overlays, film grain, reveal-on-scroll (IntersectionObserver).
 - Full-screen mobile menu with staggered link reveals.
 - `prefers-reduced-motion`: everything static.
 
@@ -73,5 +79,5 @@ FareHarbor owns date, time, guests, payment, and confirmation. The site never co
 | 2026-08-16 | FareHarbor for checkout | They already book through Red Eye Snack Shack; no fake card form |
 | 2026-08-16 | Live-site ops over prototype fiction | Mon–Fri Secret Falls, zone delivery, $15 parking |
 | 2026-08-16 | Fraunces + Plus Jakarta | Distinctive display, brief-safe body, both on Google Fonts |
-| 2026-08-16 | Hero is Hanalei photo, not the live canyon video | That clip is a desert paddle, not Kauaʻi. Their Secret Falls YouTube is the Hawaii video. Canyon still stays on About. |
-| 2026-08-16 | Redesign: premium editorial dark (`redesign-2026` branch) | Deep jungle green + mango, Fraunces display, film grain, ambient gradient, full-viewport hero pan, reveal-on-scroll, full-screen mobile menu. Logo sits in a cream badge so it reads on any photo. Blog expanded to 4 guides. |
+| 2026-08-16 | Hero is official kayak video, not desert canyon | Their YouTube kayak video shows the actual experience. Canyon video (from a different location) was moved to About page. |
+| 2026-08-16 | Redesign: island editorial light (current `main` branch) | Warm ivory paper + deep navy + palm green + pineapple gold. Fraunces display, film grain, full-viewport hero video, reveal-on-scroll, full-screen mobile menu. Logo in cream badge so it reads on any photo. Blog expanded to 9 guides. |

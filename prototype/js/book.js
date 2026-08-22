@@ -78,7 +78,7 @@
     var t = trips[id];
     return (
       '<div class="book-panel">' +
-        '<p><a href="book.html" data-all>← All adventures</a></p>' +
+        '<p><a href="/book" data-all>← All adventures</a></p>' +
         "<h2>" + esc(t.name) + "</h2>" +
         '<p class="muted">' + esc(t.blurb) + " · " + esc(t.price) + "</p>" +
         '<div class="fh-embed">' +
@@ -94,7 +94,7 @@
     root.querySelectorAll("[data-trip]").forEach(function (el) {
       el.addEventListener("click", function () {
         selected = el.getAttribute("data-trip");
-        history.replaceState(null, "", "book.html#" + selected);
+        history.replaceState(null, "", "/book#" + selected);
         window.scrollTo(0, 0);
         render();
       });
@@ -104,7 +104,7 @@
       all.addEventListener("click", function (e) {
         e.preventDefault();
         selected = null;
-        history.replaceState(null, "", "book.html");
+        history.replaceState(null, "", "/book");
         window.scrollTo(0, 0);
         render();
       });
