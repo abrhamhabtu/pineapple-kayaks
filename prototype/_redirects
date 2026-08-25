@@ -5,4 +5,6 @@
 /copy-of-secret-falls-adventure /weekend 301
 /copy-of-secret-falls-adventure-1 /groups 301
 /dive-sites /faq 301
+/services /adventures 301
+/service-page/* /book 301
 
